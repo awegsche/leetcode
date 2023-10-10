@@ -6,56 +6,6 @@
 #include <gtest/gtest.h>
 
 using std::vector;
-using std::cout, std::endl;
-
-
-template<typename It>
-int operations(It begin, It end, int dir) {
-    for (auto p = begin; p != end; p+=dir) {
-        std::cout << *p << ", ";
-    }
-    std::cout << std::endl;
-
-    auto it = begin;
-    auto _end = end;
-    int last = *it;
-    int count = 0;
-    it+=dir;
-
-
-    for (;it != _end;) {
-        if (*it == last) {
-            // replace this one instead of the last
-            ++count;
-            it+=dir;
-        }
-        else if (*it - last != dir) {
-            // replace the last element
-            ++count;
-            _end-=dir;
-        }
-        else {
-            it+=dir;
-        }
-        last += dir;
-    }
-
-    std::cout << "count = " << count <<std::endl;
-
-    return count;
-}
-
-int operations_from_median(vector<int>& nums) {
-    const int half_length = nums.size() / 2;
-    const int left = operations(nums.begin()+half_length, nums.begin()-1, -1);
-    const int right = operations(nums.begin()+half_length, nums.end(), 1);
-
-    cout << "left = " << left
-        << ", right = " << right << endl;
-
-    return left+right;
-}
-
 
 template<typename It>
 std::tuple<int, It> find_operations_for_index(It begin, It end, int index, int cost) {

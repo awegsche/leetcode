@@ -1,0 +1,22 @@
+@document.meta
+title: Magnet Sorting for HL-LHC
+categories: HL fellow magnet sorting
+@end
+
+* Introduction
+
+  Here I collect my solutions to {https://leetcode.com/}[leetcode] problems.
+
+** Note
+   This README is an exported neorg file. Please don't edit it directly, edit the neorg file and
+   `:Neorg export to-file README.md`.
+
+* Daily Coding Problems
+
+  Solutions to daily coding problems can be found in `<lang>/daily`
+
+  - {/ cpp/daily}
+
+
+#comment
+  vim:tw=100:ft=norg:norl:conceallevel=2:concealcursor=:
